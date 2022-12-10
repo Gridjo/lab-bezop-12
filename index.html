@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	ключ через запятую с пробелом пример:25, 44, 97<br>
+	<input type="text" class="M" name="color" placeholder="ключ:"><br>
+	<input type="text" class="n" name="color" placeholder="число n желательно простое"><br>
+	<input type="text" class="A" name="color" placeholder="рациональное число A"><br>
+	<input type="text" class="res" name="color" placeholder="результат"><br>
+	<input type="button" name="color_ok" value="метод деления" onclick="del()"><br>
+	<input type="button" name="color_ok" value="метод умножения" onclick="mnoh()"><br>
+<script type="text/javascript">
+	function del() {
+		var M = document.querySelector(".M").value;
+		var n = document.querySelector(".n").value;
+		var arr = M.split(", ")
+		for(var i = 0; i < arr.length;i++){
+			var K = arr[i];
+			var h = K%n;
+			console.log(h);
+			document.querySelector(".res").value += ", "+h;
+		}
+		
+	}
+	function mnoh(){
+		var M = document.querySelector(".M").value;
+		var n = document.querySelector(".n").value;
+		var A = document.querySelector(".A").value;
+		var arr = M.split(", ")
+		for(var i = 0; i < arr.length;i++)
+		{
+			var K = arr[i];
+			var f = K*A;
+			var f1 = f-Math.trunc(f);
+			var h = Math.trunc(f1*n);
+			document.querySelector(".res").value += ", "+h;
+		}
+	}
+
+</script>
+</body>
+</html>
